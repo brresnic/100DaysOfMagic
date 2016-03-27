@@ -5,6 +5,10 @@
   "authors": [
     "Michael Chen <miketychen@gmail.com>"
   ],
+  "contributors": [{
+    "name": "Ben Resnick",
+    "email": "benjamin_resnick@alumni.brown.edu"
+  }],
   "license": "ISC",
   "homepage": "https://github.com/PomCo/100DaysOfMagicButtons",
   "moduleType": [],
