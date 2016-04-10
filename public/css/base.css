@@ -253,10 +253,19 @@ body {
       line-height: 1.3em;
       font-size: 15px; } }
 
+.row {
+  margin: 0; }
+
 .windows-box {
   margin-top: 100px;
   width: 100%; }
+  .windows-box .day-box {
+    z-index: 3; }
+  .windows-box .city-box {
+    z-index: 3; }
   .windows-box .mobile-day-box {
+    z-index: 3;
+    position: relative;
     width: 125px;
     margin: 25px 5px 5px 30px;
     padding: 1px 2px 1px 2px;
@@ -268,6 +277,8 @@ body {
     .windows-box .mobile-day-box .num-txt {
       font-size: 24px; }
   .windows-box .mobile-city-box {
+    z-index: 3;
+    position: relative;
     display: inline-block;
     margin: 25px 5px 8px 30px;
     padding: 5px 18px 5px 18px;
@@ -283,7 +294,8 @@ body {
     width: 100%; }
   .windows-box .days {
     background-size: cover;
-    height: 500px; }
+    height: 540px;
+    border: 20px solid white; }
     .windows-box .days .row {
       width: 100%; }
       .windows-box .days .row .text-desc {
@@ -298,6 +310,74 @@ body {
         margin-top: -80px;
         text-align: center;
         padding-top: 4%; }
+
+/**
+ * Image slider with pure CSS
+ * Original version in http://demosthenes.info/blog/css
+ */
+.image-row {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-block; }
+
+.image-row:after {
+  display: block;
+  padding-top: 51.724%;
+  content: ''; }
+
+.slider-wrapper {
+  text-align: center;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  z-index: 2; }
+
+.image-slider {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100%; }
+
+.image-slider > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  max-width: 100%;
+  overflow: hidden;
+  resize: horizontal;
+  border-right: 5px solid black; }
+
+/* Cross-browser resizer styling */
+.image-slider > div:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 26px;
+  height: 26px;
+  padding: 5px;
+  background: linear-gradient(-45deg, black 50%, transparent 0);
+  background-clip: content-box;
+  cursor: ew-resize;
+  -webkit-filter: drop-shadow(0 0 2px white);
+  filter: drop-shadow(0 0 2px white); }
+
+.image-slider img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 100%; }
 
 @media only screen and (min-width: 1000px) {
   .windows-box {

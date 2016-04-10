@@ -1,3 +1,6 @@
+.row {
+  margin: 0;
+}
 
 .windows-box{
 	margin-top:$mobile-nav-height;
@@ -49,7 +52,8 @@
 		  -moz-background-size: cover;
 		  -o-background-size: cover;
 		  background-size: cover;
-		  height:500px;
+		  height:540px;
+      border: 20px solid white;
 		  .row{
 		  	width:100%;
 		  	.text-desc{
@@ -80,6 +84,15 @@
 
 .image-row {
   position: relative;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+.image-row:after {
+  display: block;
+  padding-top: 51.724%;
+  content: '';
 }
 
 .slider-wrapper {
@@ -87,7 +100,9 @@
   background-color: #FFFFFF;
   position: absolute;
   top: 0px;
-  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
   margin: 0 auto;
   z-index: 2;
 }
@@ -96,6 +111,10 @@
     position:relative;
     display: inline-block;
     line-height: 0;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    height: 100%;
 }
 
 .image-slider > div {
@@ -105,6 +124,7 @@
     max-width: 100%;
     overflow: hidden;
     resize: horizontal;
+    border-right: 5px solid black;
 }
 
 /* Cross-browser resizer styling */
@@ -114,16 +134,16 @@
     right: 0; bottom: 0;
     width: 26px; height: 26px;
     padding: 5px;
-    background: linear-gradient(-45deg, white 50%, transparent 0);
+    background: linear-gradient(-45deg, black 50%, transparent 0);
     background-clip: content-box;
     cursor: ew-resize;
-    -webkit-filter: drop-shadow(0 0 2px black);
-    filter: drop-shadow(0 0 2px black);
+    -webkit-filter: drop-shadow(0 0 2px white);
+    filter: drop-shadow(0 0 2px white);
 }
 
 .image-slider img {
-    user-select: none;
-    max-width: 450px;
+  user-select: none;
+  height: 100%;
 }
 
 @media only screen and (min-width:$break-small) {
